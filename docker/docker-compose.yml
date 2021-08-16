@@ -1,0 +1,41 @@
+version: '3.9'
+
+x-targets: &targets
+  image: exercise-ansible-target:latest  
+  
+services:
+
+  ansible: 
+    image: exercise-ansible:latest
+    command: ["sleep","infinity"]
+    container_name: exercise-ansible
+    build:
+      context: .
+      dockerfile: ansible.Dockerfile
+    volumes: 
+      - source: .bash_history
+        target: /root/.bash_history
+        type: bind
+      - source: ../
+        target: /ansible
+        type: bind
+
+  build-target:
+    image: exercise-ansible-target:latest
+    command: ["bash"]
+    entrypoint: ""
+    build: 
+      context: .
+      dockerfile: ansibletarget.Dockerfile
+
+  alfa: 
+    <<: *targets    
+    hostname: alfa
+
+  beta: 
+    <<: *targets    
+    hostname: beta
+
+  charlie:
+    <<: *targets    
+    hostname: charlie
