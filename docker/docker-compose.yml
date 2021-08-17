@@ -8,7 +8,7 @@ services:
   ansible: 
     image: exercise-ansible:latest
     command: ["sleep","infinity"]
-    container_name: exercise-ansible
+    container_name: exercise-ansible    
     build:
       context: .
       dockerfile: ansible.Dockerfile
@@ -18,6 +18,9 @@ services:
         type: bind
       - source: ../
         target: /ansible
+        type: bind
+      - source: ~/.aws
+        target: /root/.aws
         type: bind
 
   build-target:

@@ -2,7 +2,7 @@
 
 up:
 	PD=$$PWD
-	cd docker	
+	cd docker		
 	docker-compose -p="exercise-ansible" up -d --build 
 
 con:

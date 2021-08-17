@@ -9,6 +9,15 @@ RUN apt update && \
     apt install ansible -y && \
     apt clean && apt autoremove --purge
 
+# AWS CLI - para playbooks na aws
+RUN apt install unzip curl pip -y && \
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \    
+    unzip awscliv2.zip && \
+    ./aws/install && \    
+    rm -Rf awscliv2.zip && rm -Rf aws
+
+RUN pip install boto3 && pip install boto --user
+
 # desabilita checagem de hosts conhecidos
 RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 # Copia as chaves SSH para conectar nos alvos depois
