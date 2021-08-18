@@ -68,3 +68,22 @@ exit
 cd day2_files/k8s-ec2/provisioning/
 ansible-playbook -i hosts main.yml 
 exit
+cd day3_files/
+cd install_k8s_raspian/
+ansible-playbook -i hosts main.yml 
+ls
+ssh-copy-id --help
+ssh-copy-id -i ../../docker/sshkey.pub ubuntu@10.100.1.11
+ssh-copy-id -i ../../docker/sshkey.pub ubuntu@10.100.1.12
+ssh-copy-id -i ../../docker/sshkey.pub ubuntu@10.100.1.13
+ssh ubuntu@10.100.1.11
+ansible-playbook -i hosts main.yml 
+ansible --version
+ansible-playbook -i hosts main.yml 
+ansible-playbook -i hosts main.yml -vvvv
+ansible-playbook -i hosts main.yml 
+ansible-playbook -i hosts main.yml -vvvv
+[A
+ansible-playbook -i hosts main.yml -vvvv
+ansible-playbook -i hosts main.yml 
+exit

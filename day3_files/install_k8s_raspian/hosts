@@ -1,0 +1,14 @@
+[k8s-master]
+10.100.1.11
+
+[k8s-master:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[k8s-workers]
+10.100.1.12
+10.100.1.13
+
+[k8s-workers:vars]
+K8S_MASTER_NODE=10.100.1.11
+K8s_API_SECURE_PORT=6443
+ansible_python_interpreter=/usr/bin/python3
