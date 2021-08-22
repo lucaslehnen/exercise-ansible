@@ -88,3 +88,9 @@ cd ..
 cd install_k8s_raspian/
 ansible-playbook -i hosts main.yml 
 
+cd day4_files/
+cd install-helm/
+ansible-playbook -i hosts main.yml 
+cd ..
+ansible-playbook -i hosts main.yml 
+exit
