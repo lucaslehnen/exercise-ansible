@@ -1,2 +1,13 @@
 ---
 # handlers file for install-k8s
+- name: restart
+  shell: reboot
+  notify: Esperando o SSH
+  register: restarted
+  
+- name: Esperando o SSH
+  local_action: wait_for
+    host={{ item.public_ip }}
+    port=22
+    state=started
+  with_items: "{{ restarted.instances }}"

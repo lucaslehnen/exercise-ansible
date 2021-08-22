@@ -1,0 +1,7 @@
+---
+# tasks file for clear-k8s
+- name: Removendo cluster antigo
+  command:
+    kubeadm reset --force
+  register: kubeadm_reset
+  

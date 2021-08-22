@@ -80,10 +80,11 @@ ssh ubuntu@10.100.1.11
 ansible-playbook -i hosts main.yml 
 ansible --version
 ansible-playbook -i hosts main.yml 
-ansible-playbook -i hosts main.yml -vvvv
+cd day3_files/install_k8s_raspian/
 ansible-playbook -i hosts main.yml 
-ansible-playbook -i hosts main.yml -vvvv
-[A
-ansible-playbook -i hosts main.yml -vvvv
+cd clear_install/
 ansible-playbook -i hosts main.yml 
-exit
+cd ..
+cd install_k8s_raspian/
+ansible-playbook -i hosts main.yml 
+

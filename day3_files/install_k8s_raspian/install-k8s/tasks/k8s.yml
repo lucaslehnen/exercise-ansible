@@ -1,0 +1,17 @@
+- name: Chave  do repo oficial do K8s
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+- name: Adicionando o repo do K8s
+  apt_repository: 
+    repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+
+- name: Instalando os pacotes kubeadm, kubelet e kubectl
+  apt: 
+    name: "{{ packages }}"    
+  vars:
+    packages:
+    - kubelet
+    - kubeadm
+    - kubectl
+  

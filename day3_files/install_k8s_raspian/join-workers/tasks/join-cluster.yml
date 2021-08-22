@@ -1,0 +1,15 @@
+- name: 
+  debug: 
+    msg: "[WORKER] K8S_TOKEN_HOLDER - O token é {{ hostvars['K8S_TOKEN_HOLDER']['token'] }}"
+
+- name: 
+  debug: 
+    msg: "[WORKER] K8S_TOKEN_HOLDER - O hash é {{ hostvars['K8S_TOKEN_HOLDER']['hash'] }}"
+
+- name: Colocando o nó no cluster
+  shell: 
+    kubeadm join --token={{ hostvars['K8S_TOKEN_HOLDER']['token'] }} 
+    --discovery-token-ca-cert-hash sha256:{{ hostvars['K8S_TOKEN_HOLDER']['hash'] }} 
+    {{ K8S_MASTER_NODE }}:{{ K8S_API_SECURE_PORT }}
+  register: join_worker
+  

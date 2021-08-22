@@ -1,0 +1,6 @@
+- hosts: all
+  become: yes
+  user: ubuntu
+  gather_facts: no  
+  roles:
+  - { role: clear-k8s, tags: ["clear_k8s_role"] }
