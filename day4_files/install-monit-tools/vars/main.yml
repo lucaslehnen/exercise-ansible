@@ -1,2 +1,4 @@
 ---
 # vars file for install-monit-tools
+prometheus_helm_url: https://prometheus-community.github.io/helm-charts
+prometheus_release_name: "monit-tools"

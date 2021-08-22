@@ -1,0 +1,11 @@
+- name: helm add  repo
+  shell: helm repo add prometheus-community {{ prometheus_helm_url }}
+  register: prometheus_add_repo
+
+- name: helm update
+  shell: helm repo update
+  register: prometheus_repo_update
+
+- name: Instalando o Prometheus Operator
+  shell: helm install {{ prometheus_release_name }} prometheus-community/kube-prometheus-stack
+  register: prometheus_install 
