@@ -1,5 +1,17 @@
 ### Exercícios de Ansible 
 
+
+**Atenção:**
+
+Não dei continuidade neste repo pq tem um exercício que vai ficar muito mais top em: 
+
+- https://github.com/lucaslehnen/descomplicando-ansible-final
+
+Também separei outro repo para fazer a instalação do cluster de K8s nas raspberry's em:
+- https://github.com/TcheCode/k8s-raspberry
+
+--- 
+
 Aqui serão documentados os exercícios realizados durante o treinamento da Linux Tips: Descomplicando Ansible
 Obs.: Poderão ser registrados outros exercícios além do que o apresentado pelo treinamento.
 
