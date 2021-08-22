@@ -94,3 +94,20 @@ ansible-playbook -i hosts main.yml
 cd ..
 ansible-playbook -i hosts main.yml 
 exit
+cd day4_files/
+ls
+ansible-playbook -i hosts main.yml 
+cd ..
+ls
+cd day4_files/
+cd deploy-app-v1/
+ls
+# ansible-galaxy init deploy-app
+ls
+cd ropl
+cd roles/
+ls
+cd ..
+ls
+ansible-playbook -i hosts main.yml 
+exit
